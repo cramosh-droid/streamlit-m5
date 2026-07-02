@@ -9,10 +9,9 @@ st.set_page_config(
     layout="wide",
 )
 #logo centrado
-st.markdown(
-    "<div style='text-align: center;'><img src='app/static/logo.png' width='200'></div>",
-    unsafe_allow_html=True
-)
+col1, col2, col3 = st.columns ([2, 2, 2])
+with col2:
+    st.image("logo.png", width=200)
 
 # titulo
 st.title("Dashboard Capital Humano")
