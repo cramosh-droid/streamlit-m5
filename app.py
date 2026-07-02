@@ -46,6 +46,6 @@ fig_genero = px.pie(
     hole=0.4
 )
 fig_genero.update_traces(textinfo='percent+label')
-fig.genero.update_layout(showlegend=False)
+fig_genero.update_layout(showlegend=False)
 
 st.plotly_chart(fig_genero, use_container_width=True)
