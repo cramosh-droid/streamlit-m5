@@ -1,8 +1,8 @@
 import streamlit as st
 import panda as pd 
 st.set_page_config(
-    page_title="Dashboard Capital Humano"
-    layout="wide"
+    page_title="Dashboard Capital Humano",
+    layout="wide",
 )
 # titulo
 st.title("Dashboard Capital Humano")
