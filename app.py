@@ -8,8 +8,10 @@ st.set_page_config(
     page_icon=logo_pestana,
     layout="wide",
 )
-# Codigo de logo
-st.image("logo.png", width=200)
+#codigo centrado
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image("logo.png", use_container_width=True)
 
 # titulo
 st.title("Dashboard Capital Humano")
