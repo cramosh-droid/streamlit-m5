@@ -14,7 +14,9 @@ with col2:
     st.image("logo.png", width=200)
 
 # titulo
-st.title("Dashboard Capital Humano")
+st.markdown("<h1 style='text-align: center;'>Dashboard Capital Humano</h1>",
+unsafe_allow_html=True
+)
 # Descripcion
 st.markdown(
     """
