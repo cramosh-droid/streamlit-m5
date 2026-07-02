@@ -21,8 +21,31 @@ unsafe_allow_html=True
 st.markdown(
     """
     Bienvenido al Dashboard de Capital Humano!
-    Esta herramienta fue creada con la finalidad de poder esplorar el talento interno de nuestra empresa.
+    Esta herramienta fue creada con la finalidad de poder explorar el talento interno de nuestra empresa.
     Aqui observaras indicadores claves para el desarrollo de nuestros colaboradores!
     """
 )
 st.divider()
+try: 
+    df =pd.read_csv("Employee_data-csv")
+    except FileNotFoundError:
+        st.error("No se encontro el archivo 'Employee_data.csv")
+        st.stop()
+
+st.subheader("Distribucion de Colaboradores por genero")
+conteo_genero = df['gender'].value_counts().reset_index()
+conteo_genero.columns = ['Genero', 'Cantidad']
+
+import plotly.express as px
+fig_genero = px.pie(
+    conteo_genero,
+    values='Cantidad',
+    names='Genero',
+    color='Genero',
+    color_discrete_map={'M': '#1f77b4', 'F': '#e377c2'},
+    hole=0.4
+)
+fig_genero.update_traces(textinfo='percent+label')
+fig.genero.update_layout(showlegend=False)
+
+st.plotly_chart(fig_genero, use_container_width=True)
