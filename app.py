@@ -27,7 +27,7 @@ st.markdown(
 )
 st.divider()
 try: 
-    df =pd.read_csv("Employee_data-csv")
+    df = pd.read_csv("Employee_data.csv")
     except FileNotFoundError:
         st.error("No se encontro el archivo 'Employee_data.csv")
         st.stop()
