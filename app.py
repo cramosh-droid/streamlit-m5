@@ -29,8 +29,8 @@ st.divider()
 try: 
     df = pd.read_csv("Employee_data.csv")
     except FileNotFoundError:
-        st.error("No se encontro el archivo 'Employee_data.csv")
-        st.stop()
+    st.error("No se encontro el archivo 'Employee_data.csv")
+    st.stop()
 
 st.subheader("Distribucion de Colaboradores por genero")
 conteo_genero = df['gender'].value_counts().reset_index()
