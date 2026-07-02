@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd 
-from PIL import image
-logo_pestana = image.open("logo.png")
+from PIL import Image
+logo_pestana = Image.open("logo.png")
 
 st.set_page_config(
     page_title="Dashboard Capital Humano",
