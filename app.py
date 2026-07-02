@@ -8,10 +8,11 @@ st.set_page_config(
     page_icon=logo_pestana,
     layout="wide",
 )
-#codigo centrado
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    st.image("logo.png", use_container_width=True)
+#logo centrado
+st.markdown(
+    "<div style='text-align: center;'><img src='app/static/logo.png' width='200'></div>",
+    unsafe_allow_html=True
+)
 
 # titulo
 st.title("Dashboard Capital Humano")
