@@ -52,6 +52,9 @@ rango_desempeno = st.sidebar.slider(
     max_value=5,
     value=(1,5)
 )
+puntaje_min = rango_desempeno[0]
+puntaje_max = rango_desempeno[1]
+
 
 #Data frame filtrado
 df_filtrado = df.copy()
