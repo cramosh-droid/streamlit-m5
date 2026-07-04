@@ -34,10 +34,25 @@ except FileNotFoundError:
     st.error("No se encontro el archivo 'Employee_data.csv")
     st.stop()
 
-#selector en barra lateral
+#selector en barra lateral de genero
 genero_seleccionado = st.sidebar.selectbox("Selecciona el Genero:",
 options=["Todos"] + list(df['gender'].unique())
 )
+
+#selector estado civil
+estado_civil = st.sidebar.selectbox(
+    "selecciona el estado Civil:",
+    options = ["Todos"] + list(df['marital_status'].unique())
+)
+
+#deslizante de desempeño
+rango_desempeno = st.sidebar.slider(
+    "seleccione el rango de desempeño:",
+    min_value=1,
+    max_value=5,
+    value=(1,5)
+)
+
 
 # Grafica de dona
 st.subheader("Distribucion de Colaboradores por genero")
