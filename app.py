@@ -3,6 +3,7 @@ import pandas as pd
 from PIL import Image
 logo_pestana = Image.open("logo.png")
 
+#logo en pestaña de internet y nombre de pagina
 st.set_page_config(
     page_title="Dashboard Capital Humano",
     page_icon=logo_pestana,
@@ -26,12 +27,19 @@ st.markdown(
     """
 )
 st.divider()
+#llamado de archivo y mensaje de error en caso de no encontrarlo
 try: 
     df = pd.read_csv("Employee_data.csv")
 except FileNotFoundError:
     st.error("No se encontro el archivo 'Employee_data.csv")
     st.stop()
 
+#selector en barra lateral
+genero_seleccionado = st.sidebar.selectbox("Selecciona el Genero:",
+options=["Todos"] + list(df['gender'].unique())
+)
+
+# Grafica de dona
 st.subheader("Distribucion de Colaboradores por genero")
 conteo_genero = df['gender'].value_counts().reset_index()
 conteo_genero.columns = ['Genero', 'Cantidad']
