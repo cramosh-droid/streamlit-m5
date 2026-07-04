@@ -88,3 +88,17 @@ fig_genero.update_traces(textinfo='percent+label')
 fig_genero.update_layout(showlegend=False)
 
 st.plotly_chart(fig_genero, use_container_width=True)
+
+#Histograma para distribucion de desempeño
+fig_desempeno = px.histogram(
+    df_filtrado,
+    x= 'performance_score',
+    title= "Distribucion de los puntajes de Desempeño",
+    labels={'performance_score':'Puntaje de Desempeño', 'count' : 'Cantidad de Empleados '},
+    color_discrete_sequence=['orchid']
+)
+fig_desempeno.update_layout(
+    bargap=0.2,
+    xaxis=dict(tickmode='linear',tick=0, dtick=1)
+)
+st.plotly_chart(fig_desempeno)
