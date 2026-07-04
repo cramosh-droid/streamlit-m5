@@ -53,10 +53,23 @@ rango_desempeno = st.sidebar.slider(
     value=(1,5)
 )
 
+#Data frame filtrado
+df_filtrado = df.copy()
+#Filtro genero
+if genero_seleccionado != "Todos":
+    df_filtrado = df_filtrado[df_filtrado['gender']==genero_seleccionado]
+#Filtro estado civil
+if estado_civil != "Todos":
+    df_filtrado = df_filtrado[df_filtrado['marital_status'] == estado_civil]
+#Filtro Rango de desempeño
+df_filtrado = df_filtrado[
+    (df_filtrado['perdformance_score'] >= rango_desempeno[0]) &
+    (df_filtrado ['performance_score'] <= rango_desempeno[1])
+]
 
 # Grafica de dona
 st.subheader("Distribucion de Colaboradores por genero")
-conteo_genero = df['gender'].value_counts().reset_index()
+conteo_genero = df_filtrado['gender'].value_counts().reset_index()
 conteo_genero.columns = ['Genero', 'Cantidad']
 
 import plotly.express as px
