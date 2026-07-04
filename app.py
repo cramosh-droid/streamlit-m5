@@ -110,7 +110,7 @@ with col2:
     st.plotly_chart(fig_desempeno, use_container_width=True)
 
 st.markdown("---")
-df_promedio_horas = df_filtrado.groupby('gender')['average_work_hours'].mean().resetindex()
+df_promedio_horas = df_filtrado.groupby('gender')['average_work_hours'].mean().reset_index()
 fig_horas =px.bar(
     df_promedio_horas,
     x='gender',
