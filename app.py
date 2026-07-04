@@ -81,7 +81,7 @@ fig_genero = px.pie(
     values='Cantidad',
     names='Genero',
     color='Genero',
-    color_discrete_map={'M': '#1f77b4', 'F': '#e377c2'},
+    color_discrete_map={'M': '#3a86ff', 'F': '#e377c2'},
     hole=0.4
 )
 fig_genero.update_traces(textinfo='percent+label')
@@ -108,4 +108,3 @@ with col1:
 with col2:
     st.subheader("Distribucion de Desempeño")
     st.plotly_chart(fig_desempeno, use_container_width=True)
-    
