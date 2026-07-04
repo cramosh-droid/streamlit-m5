@@ -108,3 +108,16 @@ with col1:
 with col2:
     st.subheader("Distribucion de Desempeño")
     st.plotly_chart(fig_desempeno, use_container_width=True)
+
+st.markdown("---")
+df_promedio_horas = df_filtrado.groupby('gender')['average_work_hours'].mean().resetindex()
+fig_horas =px.bar(
+    df_promedio_horas,
+    x='gender',
+    y='average_work_hours',
+    title="Promedio de Horas trabajadas por Genero",
+    labels={'gender':'Genero','average_work_hours':'Promedio de horas'},
+    color='gender',
+    color_discrete_map={'M':'#3a86ff', 'F': '#e377c2'}
+)
+st.plotly_chart(fig_horas,use_container_width=True)
