@@ -87,7 +87,7 @@ fig_genero = px.pie(
 fig_genero.update_traces(textinfo='percent+label')
 fig_genero.update_layout(showlegend=False)
 
-st.plotly_chart(fig_genero, use_container_width=True)
+
 
 #Histograma para distribucion de desempeño
 fig_desempeno = px.histogram(
@@ -99,4 +99,13 @@ fig_desempeno = px.histogram(
 )
 fig_desempeno.update_layout(bargap=0.2)
 fig_desempeno.update_xaxes(tickmode='linear',tick0=1,dtick=1)
-st.plotly_chart(fig_desempeno)
+
+#Acomodo de grafica de dona e histrograma
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader("Genero de Empleado")
+    st.plotly_chart(fig_genero, use_container_width=True)
+with col2:
+    st.subheader("Distribucion de Desempeño")
+    st.plotly_chart(fig_desempeno, use_container_width=True)
+    
