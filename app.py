@@ -97,8 +97,6 @@ fig_desempeno = px.histogram(
     labels={'performance_score':'Puntaje de Desempeño', 'count' : 'Cantidad de Empleados '},
     color_discrete_sequence=['orchid']
 )
-fig_desempeno.update_layout(
-    bargap=0.2,
-    xaxis=dict(tickmode='linear',tick=0, dtick=1)
-)
+fig_desempeno.update_layout(bargap=0.2)
+fig_desempeno.update_xaxes(tickmode='linear',tick0=1,dtick=1)
 st.plotly_chart(fig_desempeno)
