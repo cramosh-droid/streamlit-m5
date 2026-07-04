@@ -66,7 +66,7 @@ if estado_civil != "Todos":
     df_filtrado = df_filtrado[df_filtrado['marital_status'] == estado_civil]
 #Filtro Rango de desempeño
 df_filtrado = df_filtrado[
-    (df_filtrado['perdformance_score'] >= rango_desempeno[0]) &
+    (df_filtrado['performance_score'] >= rango_desempeno[0]) &
     (df_filtrado ['performance_score'] <= rango_desempeno[1])
 ]
 
