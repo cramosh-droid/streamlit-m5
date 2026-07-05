@@ -146,6 +146,6 @@ fig_puntaje_vs_horas = px.box(
     title = "Relacion entre Horas Trabajadas y Puntaje de Desempeño",
     labels = {'performance_score':'Puntaje de desempeño', 'average_work_hours':'Promedio de horas Trabajadas'},
     color = 'performance_score',
-    points ='all'
+    points ='outliers'
 )
 st.plotly_chart(fig_puntaje_vs_horas, use_container_width = True)
