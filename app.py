@@ -132,4 +132,4 @@ fig_salario_vs_edad = px.scatter(
     color_discrete_map={'M': '#3a86ff', 'F': '#e377c2'},
     hover_data=['performance_score']
 )
-st.plotly_chart(fig_salario_vs_edad,use_container_width=true)
+st.plotly_chart(fig_salario_vs_edad, use_container_width = True)
