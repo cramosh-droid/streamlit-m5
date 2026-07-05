@@ -123,6 +123,7 @@ fig_horas =px.bar(
 st.plotly_chart(fig_horas,use_container_width=True)
 st.markdown("---")
 fig_salario_vs_edad = px.scatter(
+    df_filtrado,
     x='age',
     y='salary',
     title="Relacion entre Edad y Salario de los Colaboradores",
