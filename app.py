@@ -70,7 +70,7 @@ df_filtrado = df_filtrado[
     (df_filtrado ['performance_score'] <= rango_desempeno[1])
 ]
 
-# Grafica de dona
+# Grafica de dona para ver la comparativa entre generos
 st.subheader("Distribucion de Colaboradores por genero")
 conteo_genero = df_filtrado['gender'].value_counts().reset_index()
 conteo_genero.columns = ['Genero', 'Cantidad']
@@ -110,6 +110,7 @@ with col2:
     st.plotly_chart(fig_desempeno, use_container_width=True)
 
 st.markdown("---")
+#Grafica de barras para ver las horas promedio por genero
 df_promedio_horas = df_filtrado.groupby('gender')['average_work_hours'].mean().reset_index()
 fig_horas =px.bar(
     df_promedio_horas,
@@ -122,6 +123,7 @@ fig_horas =px.bar(
 )
 st.plotly_chart(fig_horas,use_container_width=True)
 st.markdown("---")
+# Scatter plot para ver salario vs edad
 fig_salario_vs_edad = px.scatter(
     df_filtrado,
     x='age',
@@ -133,3 +135,17 @@ fig_salario_vs_edad = px.scatter(
     hover_data=['performance_score']
 )
 st.plotly_chart(fig_salario_vs_edad, use_container_width = True)
+
+st.markdown("---")
+
+#Grafica de boxplot para ver la relacion entre puntaje de desempeño vs horas trabajadas
+fig_puntaje_vs_horas = px.box(
+    df_filtrado,
+    x='performance_score',
+    y='average_work_hours',
+    title = "Relacion entre Horas Trabajadas y Puntaje de Desempeño",
+    labels = {'performance_score':'Puntaje de desempeño', 'average_work_hours':'Promedio de horas Trabajadas'},
+    color = 'performance_score',
+    points ='all'
+)
+st.plotly_chart(fig_puntaje_vs_horas, use_container_width = True)
