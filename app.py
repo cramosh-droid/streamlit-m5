@@ -121,3 +121,14 @@ fig_horas =px.bar(
     color_discrete_map={'M':'#3a86ff', 'F': '#e377c2'}
 )
 st.plotly_chart(fig_horas,use_container_width=True)
+st.markdown("---")
+fig_salario_vs_edad = px.scatter(
+    x='age',
+    y='salary',
+    title="Relacion entre Edad y Salario de los Colaboradores",
+    labels={'age':'Edad','salary':'Compensacion ($)'},
+    color='gender',
+    color_discrete_map={'M': '#3a86ff', 'F': '#e377c2'},
+    hover_data=['performance_score']
+)
+st.plotly_chart(fig_salario_vs_edad,use_container_width=true)
