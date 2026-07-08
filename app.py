@@ -149,6 +149,7 @@ fig_puntaje_vs_horas = px.box(
     points ='outliers'
 )
 st.plotly_chart(fig_puntaje_vs_horas, use_container_width = True)
+st.markdown("---")
 st.markdown(
     """
     Esta herramienta pretende ser una guia para la evaluacion y mejora de nuestros colaboradores, con los resultados actuales podemos observar lo siguiente:
