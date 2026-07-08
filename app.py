@@ -149,3 +149,14 @@ fig_puntaje_vs_horas = px.box(
     points ='outliers'
 )
 st.plotly_chart(fig_puntaje_vs_horas, use_container_width = True)
+st.markdown(
+    """
+    Esta herramienta pretende ser una guia para la evaluacion y mejora de nuestros colaboradores, con los resultados actuales podemos observar lo siguiente:
+    1. Se tiene un porcentaje mayor de mujeres que hombres, y aunque la diferencia es menor, debemos procurar que no se tenga una mayoria de hombres o mujeres por las leyes de equidad.
+    2. Podemos sbservar que tenemos una minoria de colaboradores que tienen un puntaje de desempeño entre 1 y 2. Estos 31 colaboradores requieren de un acercamiento por parte de sus supervisores para garantizar que cumplan sus metas dentro y fuera de la empresa. Es aconcejable sesiones 1 a 1 donde se definan planes de acciones para su mejoria.
+    3. Tenemos un promedio de horas trabajadas equitativas, esto es importante por las leyes de equidad de genero.
+    4. Podemos observar que el salario no es dependiente de la edad de nuestros colaboradores, esto nos indica que nuestros tabuladores internos funcionan, y los salarios son en base a competencia y no en base a edad.
+    5. Podemos ver una clara relacion entre el puntaje mas bajo de desempeño y las horas trabajadas. Esto permite trazar un posible plan de accion con nuestro 13 de nuestros colaboradores. Sin embargo el grafico muestra como nuestros colaboradores que tienen una calificacion de desempeño de 2, dedican suficientes horas de trabajo. Vale la pena evaluar la capacitacion que se les dio a ellos, y muy probablemente se deba reforzar.
+    Esperamos que esta informacion sea de utilidad, recuerda que buscamos que nuestros colaboradores cumplan sus metas dentro y fuera de este gran equipo de trabajo.
+    """
+)
